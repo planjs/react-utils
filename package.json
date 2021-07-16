@@ -1,0 +1,51 @@
+{
+  "name": "@planjs/react-utils",
+  "version": "1.0.0",
+  "description": "",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "typings/index.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "typings"
+  ],
+  "scripts": {
+    "start": "stan-builder -w",
+    "prepare": "stan-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planjs/react-utils.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "fupengl",
+    "email": "fupenglxy@gmail.com",
+    "url": "https://github.com/fupengl"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planjs/react-utils/issues"
+  },
+  "homepage": "https://github.com/planjs/react-utils#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.5",
+    "@planjs/utils": "^1.8.4",
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "devDependencies": {
+    "@planjs/fabric": "^0.0.76",
+    "typescript": "4.1.5",
+    "stan-builder": "^0.9.13"
+  },
+  "peerDependencies": {
+    "react": ">16.8.0",
+    "react-dom": ">16.8.0"
+  }
+}
