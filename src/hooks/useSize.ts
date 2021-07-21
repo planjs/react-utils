@@ -9,6 +9,7 @@ type Size = { width?: number; height?: number };
  * 使用 ref 监听节点尺寸变化
  */
 function useSize<T extends HTMLElement = HTMLElement>(): [Size, MutableRefObject<T>];
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function useSize<T extends HTMLElement = HTMLElement>(arg: Arg): [Size];
 function useSize<T extends HTMLElement = HTMLElement>(
   ...args: [Arg] | []
@@ -32,8 +33,8 @@ function useSize<T extends HTMLElement = HTMLElement>(
       return () => {};
     }
 
-    const resizeObserver = new ResizeObserver(entries => {
-      entries.forEach(entry => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      entries.forEach((entry) => {
         setState({
           width: entry.target.clientWidth,
           height: entry.target.clientHeight,
@@ -45,6 +46,7 @@ function useSize<T extends HTMLElement = HTMLElement>(
     return () => {
       resizeObserver.disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [element.current, typeof arg.current === 'function' ? undefined : arg.current]);
 
   if (hasPassedInElement) {

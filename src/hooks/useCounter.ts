@@ -1,5 +1,5 @@
-import useCreation from './useCreation';
 import { useState, useMemo } from 'react';
+import useCreation from './useCreation';
 
 interface Options {
   min?: number;
@@ -41,10 +41,10 @@ function useCounter(initialValue: number = 0, options: Options = {}): [number, A
       });
     };
     const inc = (delta: number = 1) => {
-      setValue(c => c + delta);
+      setValue((c) => c + delta);
     };
     const dec = (delta: number = 1) => {
-      setValue(c => c - delta);
+      setValue((c) => c - delta);
     };
     const set = (value: number | ((c: number) => number)) => {
       setValue(value);

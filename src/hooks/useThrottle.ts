@@ -9,7 +9,7 @@ function useThrottle<T>(value: T, wait: number) {
       setState(value);
     },
     [value],
-    wait
+    wait,
   );
 
   return state;

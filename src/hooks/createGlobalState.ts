@@ -5,7 +5,7 @@ export function createGlobalState<S = any>(initialState?: S) {
     state: initialState,
     setState(state: S) {
       store.state = state;
-      store.setters.forEach(setter => setter(store.state));
+      store.setters.forEach((setter) => setter(store.state));
     },
     setters: [],
   };
@@ -15,9 +15,9 @@ export function createGlobalState<S = any>(initialState?: S) {
 
     useEffect(
       () => () => {
-        store.setters = store.setters.filter(setter => setter !== stateSetter);
+        store.setters = store.setters.filter((setter) => setter !== stateSetter);
       },
-      []
+      [],
     );
 
     /* eslint-disable-next-line */

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useLifecycles = (mount: () => void, unmount?:() => void) => {
+const useLifecycles = (mount: () => void, unmount?: () => void) => {
   useEffect(() => {
     if (mount) {
       mount();

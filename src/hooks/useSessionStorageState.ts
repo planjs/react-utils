@@ -1,12 +1,12 @@
 import useStorageState from './useStorageState';
 
 function useSessionStorageState<T = undefined>(
-  key: string
+  key: string,
 ): [T | undefined, (value?: T | ((previousState?: T) => T)) => void];
 
 function useSessionStorageState<T>(
   key: string,
-  defaultValue: T | (() => T)
+  defaultValue: T | (() => T),
 ): [T, (value?: T | ((previousState: T) => T)) => void];
 
 function useSessionStorageState<T>(key: string, defaultValue?: T | (() => T)) {

@@ -133,7 +133,7 @@ const defaultEvents: Array<keyEvent> = ['keydown'];
 function useKeyPress<T extends HTMLElement = HTMLInputElement>(
   keyFilter: KeyFilter,
   eventHandler: EventHandler = noop,
-  option: EventOption = {}
+  option: EventOption = {},
 ): RefObject<T> {
   const { events = defaultEvents, target } = option;
   const element = useRef<T>();
@@ -141,13 +141,13 @@ function useKeyPress<T extends HTMLElement = HTMLInputElement>(
   callbackRef.current = eventHandler;
 
   const callbackHandler = useCallback(
-    event => {
+    (event) => {
       const genGuard: KeyPredicate = genKeyFormater(keyFilter);
       if (genGuard(event)) {
         return callbackRef.current(event);
       }
     },
-    [keyFilter]
+    [keyFilter],
   );
 
   useEffect(() => {

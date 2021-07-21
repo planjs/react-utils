@@ -3,14 +3,15 @@ import { useMemo, useState, useCallback } from 'react';
 function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
   const initialMap = useMemo<Map<K, T>>(
     () => (initialValue === undefined ? new Map() : new Map(initialValue)) as Map<K, T>,
-    []
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
   );
   const [map, setMap] = useState(initialMap);
 
   const stableActions = useMemo(
     () => ({
       set: (key: K, entry: T) => {
-        setMap(prev => {
+        setMap((prev) => {
           const temp = new Map(prev);
           temp.set(key, entry);
           return temp;
@@ -20,7 +21,7 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
         setMap(new Map(newMap));
       },
       remove: (key: K) => {
-        setMap(prev => {
+        setMap((prev) => {
           const temp = new Map(prev);
           temp.delete(key);
           return temp;
@@ -28,11 +29,11 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
       },
       reset: () => setMap(initialMap),
     }),
-    [setMap, initialMap]
+    [setMap, initialMap],
   );
 
   const utils = {
-    get: useCallback(key => map.get(key), [map]),
+    get: useCallback((key) => map.get(key), [map]),
     ...stableActions,
   };
 

@@ -19,7 +19,11 @@ abstract class AVisibleObserve {
    */
   protected onActiveChange: (active?: boolean) => void;
 
-  constructor(targetDomId: string, rootDomId: string, onActiveChange: (active?: boolean) => void) {
+  protected constructor(
+    targetDomId: string,
+    rootDomId: string,
+    onActiveChange: (active?: boolean) => void,
+  ) {
     this.targetDomId = targetDomId;
     this.rootDomId = rootDomId;
     this.onActiveChange = onActiveChange;
@@ -46,7 +50,7 @@ class IntersectionVisibleObserve extends AVisibleObserve {
     super(targetDomId, rootDomId, onActiveChange);
 
     this.intersectionObserver = new IntersectionObserver(
-      changes => {
+      (changes) => {
         if (changes[0].intersectionRatio > 0) {
           onActiveChange(true);
         } else {
@@ -61,7 +65,7 @@ class IntersectionVisibleObserve extends AVisibleObserve {
       },
       {
         root: document.getElementById(rootDomId),
-      }
+      },
     );
   }
 
@@ -123,11 +127,11 @@ class SetIntervalVisibleObserve extends AVisibleObserve {
 
     // 长度之和 + 两倍间距（交叉则间距为负）
     const sumOfWidthWithGap = Math.abs(
-      rootComponentRect.left + rootComponentRect.right - componentRect.left - componentRect.right
+      rootComponentRect.left + rootComponentRect.right - componentRect.left - componentRect.right,
     );
     // 宽度之和 + 两倍间距（交叉则间距为负）
     const sumOfHeightWithGap = Math.abs(
-      rootComponentRect.bottom + rootComponentRect.top - componentRect.bottom - componentRect.top
+      rootComponentRect.bottom + rootComponentRect.top - componentRect.bottom - componentRect.top,
     );
     if (sumOfWidthWithGap <= sumOfWidth && sumOfHeightWithGap <= sumOfHeight) {
       // 在内部
@@ -170,14 +174,14 @@ export class VisibleObserve extends AVisibleObserve {
       this.actualVisibleObserve = new IntersectionVisibleObserve(
         targetDomId,
         rootDomId,
-        onActiveChange
+        onActiveChange,
       );
     } else {
       // 兼容的 SetInterval 方案
       this.actualVisibleObserve = new SetIntervalVisibleObserve(
         targetDomId,
         rootDomId,
-        onActiveChange
+        onActiveChange,
       );
     }
   }

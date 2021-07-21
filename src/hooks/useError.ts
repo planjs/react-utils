@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const useError = (): ((err: Error) => void) => {
   const [error, setError] = useState<Error | null>(null);
@@ -9,11 +9,9 @@ const useError = (): ((err: Error) => void) => {
     }
   }, [error]);
 
-  const dispatchError = useCallback((err: Error) => {
+  return useCallback((err: Error) => {
     setError(err);
   }, []);
-
-  return dispatchError;
 };
 
 export default useError;

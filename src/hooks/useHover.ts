@@ -1,4 +1,5 @@
-import { useState, useEffect, RefObject } from 'react';
+import { useState, useEffect } from 'react';
+import type { RefObject } from 'react';
 
 function useHover<T extends HTMLElement = HTMLElement>(elementRef: RefObject<T>): boolean {
   const [value, setValue] = useState<boolean>(false);
@@ -19,7 +20,7 @@ function useHover<T extends HTMLElement = HTMLElement>(elementRef: RefObject<T>)
     }
   }, [elementRef]);
 
-  return !!value;
+  return value;
 }
 
 export default useHover;

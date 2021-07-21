@@ -1,9 +1,10 @@
-/**
- * @description 模拟react类组件的compoentDidMount()
- */
 import { useEffect } from 'react';
+import type { EffectCallback } from 'react';
 
-const useMount = (fn: Function) => {
+/**
+ * @description 模拟react类组件的componentDidMount()
+ */
+const useMount = (fn: EffectCallback) => {
   useEffect(() => {
     fn();
     // eslint-disable-next-line react-hooks/exhaustive-deps

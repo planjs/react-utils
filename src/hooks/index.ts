@@ -7,7 +7,6 @@ export { default as useUpdateEffect } from './useUpdateEffect';
 export { default as useForceUpdate } from './useForceUpdate';
 export { default as createStateContext } from './createStateContext';
 export { default as createGlobalState } from './createGlobalState';
-export { default as useUpdate } from './useUpdate';
 export { default as useDeepEffect } from './useDeepEffect';
 
 export { default as useInterval } from './useInterval';

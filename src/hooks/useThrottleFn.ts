@@ -12,12 +12,12 @@ function useThrottleFn<T extends any[]>(fn: (...args: T) => any, wait: number): 
 function useThrottleFn<T extends any[]>(
   fn: (...args: T) => any,
   deps: DependencyList,
-  wait: number
+  wait: number,
 ): ReturnValue<T>;
 function useThrottleFn<T extends any[]>(
   fn: (...args: T) => any,
   deps: DependencyList | number,
-  wait?: number
+  wait?: number,
 ): ReturnValue<T> {
   const _deps: DependencyList = (Array.isArray(deps) ? deps : []) as DependencyList;
   const _wait: number = typeof deps === 'number' ? deps : wait || 0;
@@ -46,7 +46,7 @@ function useThrottleFn<T extends any[]>(
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [_wait, cancel]
+    [_wait, cancel],
   );
 
   useUpdateEffect(() => {

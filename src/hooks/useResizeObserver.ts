@@ -26,6 +26,6 @@ export default function useResizeObserver(handler: (evt: any) => void, element?:
         element && observer.unobserve(element);
       };
     },
-    [element] // 如果 element 变化，就再次运行
+    [element], // 如果 element 变化，就再次运行
   );
 }
