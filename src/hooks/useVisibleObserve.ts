@@ -199,8 +199,9 @@ export default function useVisibleObserve(domId: string, rootId: string, flag?: 
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // @ts-ignore
-    const visibleObserve = new VisibleObserve(domId, rootId, setVisible);
+    const visibleObserve = new VisibleObserve(domId, rootId, (active) => {
+      setVisible(!!active);
+    });
 
     visibleObserve.observe();
 

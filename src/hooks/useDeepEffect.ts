@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import type { DependencyList, EffectCallback } from 'react';
-import deepEqual from 'fast-deep-equal/react';
 import { isPrimitive } from '@planjs/utils';
+import isDeepEqual from '../utils/isDeepEqual';
 
 const warnDeps = (dependencies: DependencyList) => {
   if (dependencies.length === 0) {
@@ -17,7 +17,7 @@ function useDeepCompareMemoize(value: DependencyList) {
   const ref = useRef<DependencyList>();
   const signalRef = useRef<number>(0);
 
-  if (!deepEqual(value, ref.current)) {
+  if (!isDeepEqual(value, ref.current)) {
     ref.current = value;
     signalRef.current += 1;
   }

@@ -1,3 +1,8 @@
+// factory
+export { default as createStateContext } from './createStateContext';
+export { default as createGlobalState } from './createGlobalState';
+
+// hooks
 export { default as useLifecycles } from './useLifecycles';
 export { default as useMount } from './useMount';
 export { default as useUnmount } from './useUnmount';
@@ -5,8 +10,6 @@ export { default as useMountedState } from './useMountedState';
 export { default as usePersistFn } from './usePersistFn';
 export { default as useUpdateEffect } from './useUpdateEffect';
 export { default as useForceUpdate } from './useForceUpdate';
-export { default as createStateContext } from './createStateContext';
-export { default as createGlobalState } from './createGlobalState';
 export { default as useDeepEffect } from './useDeepEffect';
 
 export { default as useInterval } from './useInterval';
