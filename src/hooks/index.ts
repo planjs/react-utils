@@ -6,6 +6,7 @@ export { default as createGlobalState } from './createGlobalState';
 export { default as useLifecycles } from './useLifecycles';
 export { default as useMount } from './useMount';
 export { default as useUnmount } from './useUnmount';
+export { default as useSafeState } from './useSafeState';
 export { default as useMountedState } from './useMountedState';
 export { default as usePersistFn } from './usePersistFn';
 export { default as useUpdateEffect } from './useUpdateEffect';
