@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 
 function useEventListener<K extends keyof WindowEventMap>(
   eventName: K,
-  handler: Function,
+  handler: (event: WindowEventMap[K]) => void,
   element = window,
 ) {
   const savedHandler = useRef<any>(null);
