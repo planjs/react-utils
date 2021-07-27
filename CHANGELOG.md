@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.4 (2021-07-27)
+
+
+### Bug Fixes
+
+* **usemount:** typing ([6d9f53b](https://github.com/planjs/react-utils/commit/6d9f53b9345078ff12e2c9d2f81ccfde4287860c))
+
 ### 0.0.3 (2021-07-26)
 
 ### 0.0.2 (2021-07-22)
