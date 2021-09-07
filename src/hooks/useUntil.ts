@@ -2,8 +2,8 @@ import React from 'react';
 
 import { until } from '@planjs/utils';
 
-import type { BaseRetryOption } from '@planjs/utils/typings/promise/interfaces';
-import type { ThenReturn } from '@planjs/utils/es/type';
+import type { BaseRetryOption } from '@planjs/utils/typings/promise/type';
+import type { ThenReturn } from '@planjs/utils/typings/type';
 
 function useUntil<T extends (...args: any[]) => Promise<any>>(fn: T, options: BaseRetryOption) {
   const isRunning = React.useRef(false);

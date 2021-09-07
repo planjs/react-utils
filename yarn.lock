@@ -1004,6 +1004,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.15.4":
+  version "7.15.4"
+  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.15.4.tgz?cache=0&sync_timestamp=1630618785994&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+  integrity sha1-/RfRa/34eObdAtGXU6OfqKjZyEo=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.9.6":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
@@ -1492,14 +1499,14 @@
     stylelint-declaration-block-no-ignored-properties "^1.1.0"
     stylelint-order "^0.8.1"
 
-"@planjs/utils@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.8.4.tgz#c0c81c43afa6e52367f5bcc3623386d2d7196324"
-  integrity sha1-wMgcQ6+m5SNn9bzDYjOG0tcZYyQ=
+"@planjs/utils@^1.10.0", "@planjs/utils@^1.11.3":
+  version "1.11.3"
+  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.3.tgz#2cef88b4ddbb9e791391a7bd3fb7273a24e90f11"
+  integrity sha1-LO+ItN27nnkTkae9P7cnOiTpDxE=
   dependencies:
-    "@babel/runtime" "^7.12.5"
-    decimal.js "^10.2.1"
-    query-string "^7.0.0"
+    "@babel/runtime" "^7.15.4"
+    decimal.js "^10.3.1"
+    query-string "^7.0.1"
 
 "@rollup/plugin-alias@^3.1.2":
   version "3.1.4"
@@ -3727,7 +3734,7 @@ decamelize@^1.1.0, decamelize@^1.2.0:
   resolved "https://registry.npm.taobao.org/decamelize/download/decamelize-1.2.0.tgz?cache=0&sync_timestamp=1610348634503&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdecamelize%2Fdownload%2Fdecamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
-decimal.js@^10.2.1:
+decimal.js@^10.2.1, decimal.js@^10.3.1:
   version "10.3.1"
   resolved "https://registry.nlark.com/decimal.js/download/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
   integrity sha1-2MOkRKnGd0umDKatcmHDqU/V54M=
@@ -7123,6 +7130,17 @@ multimatch@^4.0.0:
     arrify "^2.0.1"
     minimatch "^3.0.4"
 
+multimatch@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/multimatch/download/multimatch-5.0.0.tgz#932b800963cea7a31a033328fa1e0c3a1874dbe6"
+  integrity sha1-kyuACWPOp6MaAzMo+h4MOhh02+Y=
+  dependencies:
+    "@types/minimatch" "^3.0.3"
+    array-differ "^3.0.0"
+    array-union "^2.1.0"
+    arrify "^2.0.1"
+    minimatch "^3.0.4"
+
 nanoid@^3.1.22:
   version "3.1.23"
   resolved "https://registry.nlark.com/nanoid/download/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
@@ -8328,7 +8346,7 @@ q@^1.1.2, q@^1.5.1:
   resolved "https://registry.npm.taobao.org/q/download/q-1.5.1.tgz?cache=0&sync_timestamp=1599054212574&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fq%2Fdownload%2Fq-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-query-string@^7.0.0:
+query-string@^7.0.1:
   version "7.0.1"
   resolved "https://registry.nlark.com/query-string/download/query-string-7.0.1.tgz?cache=0&sync_timestamp=1624297034221&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fquery-string%2Fdownload%2Fquery-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
   integrity sha1-Rb0UnPWGqqWC3/x+x6itl90C910=
@@ -8840,10 +8858,10 @@ rollup@^2.42.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rollup@^2.53.2:
-  version "2.53.3"
-  resolved "https://registry.nlark.com/rollup/download/rollup-2.53.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Frollup%2Fdownload%2Frollup-2.53.3.tgz#14b0e57f0874d4ad23bdbb13050cf70bcd1eabf7"
-  integrity sha1-FLDlfwh01K0jvbsTBQz3C80eq/c=
+rollup@^2.56.3:
+  version "2.56.3"
+  resolved "https://registry.nlark.com/rollup/download/rollup-2.56.3.tgz#b63edadd9851b0d618a6d0e6af8201955a77aeff"
+  integrity sha1-tj7a3ZhRsNYYptDmr4IBlVp3rv8=
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -9225,10 +9243,10 @@ stack-utils@^2.0.3:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.9.14:
-  version "0.9.14"
-  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.9.14.tgz#904efa3a42a20589880f7a1a807385cecae6a804"
-  integrity sha1-kE76OkKiBYmID3oagHOFzsrmqAQ=
+stan-builder@^0.9.21:
+  version "0.9.21"
+  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.9.21.tgz#d8a5d33a2f3db3c711071c9dfc058c4fb2c6aadb"
+  integrity sha1-2KXTOi89s8cRBxyd/AWMT7LGqts=
   dependencies:
     "@babel/core" "^7.14.2"
     "@babel/plugin-proposal-decorators" "^7.14.2"
@@ -9270,24 +9288,24 @@ stan-builder@^0.9.14:
     gulp-typescript "^6.0.0-alpha.1"
     merge2 "^1.4.1"
     postcss-load-config "^2.1.2"
-    rollup "^2.53.2"
+    rollup "^2.56.3"
     rollup-plugin-postcss "^3.1.8"
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-typescript2 "0.30.0"
     rollup-plugin-visualizer "^4.1.1"
-    stan-utils "^0.6.12"
+    stan-utils "^0.6.19"
     through2 "^4.0.2"
     vinyl-fs "^3.0.3"
     vue-template-compiler "^2.6.12"
   optionalDependencies:
     fsevents "~2.3.2"
 
-stan-utils@^0.6.12:
-  version "0.6.12"
-  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.12.tgz#c7d890f6df9f584b9d8f07eaa31696bcd6065d7d"
-  integrity sha1-x9iQ9t+fWEudjwfqoxaWvNYGXX0=
+stan-utils@^0.6.19:
+  version "0.6.19"
+  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.19.tgz#e3e0b87e2ec29c993ac3cd37d79ba1880e626147"
+  integrity sha1-4+C4fi7CnJk6w80315uhiA5iYUc=
   dependencies:
-    "@planjs/utils" "^1.8.4"
+    "@planjs/utils" "^1.10.0"
     "@types/cross-spawn" "^6.0.2"
     "@types/debug" "^4.1.5"
     "@types/fs-extra" "^9.0.11"
@@ -9313,6 +9331,7 @@ stan-utils@^0.6.12:
     joi "^17.2.1"
     lodash "^4.17.20"
     mkdirp "^1.0.4"
+    multimatch "^5.0.0"
     ora "^5.1.0"
     prettier "2.1.2"
     pretty-ms "^7.0.1"
