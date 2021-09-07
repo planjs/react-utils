@@ -16,9 +16,13 @@ type IntervalHandlerAsObject = {
   intervalId: number | null;
 };
 
-type IntervalHandlerAsArray = [() => void, () => void, number | null];
+type IntervalHandlerAsArray = Array<number | (() => void) | null> & {
+  0: () => void;
+  1: () => void;
+  2: number | null;
+};
 
-type IntervalHandler = IntervalHandlerAsArray & IntervalHandlerAsObject;
+type IntervalHandler = IntervalHandlerAsArray & {};
 
 /**
  * useInterval
@@ -75,7 +79,7 @@ function useInterval(
   (handler as IntervalHandlerAsObject).stop = stop;
   (handler as IntervalHandlerAsObject).intervalId = internalIdRef.current;
 
-  return handler as IntervalHandler;
+  return handler as IntervalHandlerAsArray & IntervalHandlerAsObject;
 }
 
 export default useInterval;
