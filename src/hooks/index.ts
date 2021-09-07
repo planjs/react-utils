@@ -16,6 +16,7 @@ export { default as useDeepEffect } from './useDeepEffect';
 export { default as useInterval } from './useInterval';
 export { default as useTimeout } from './useTimeout';
 export { default as useTimeoutFn } from './useTimeoutFn';
+export { default as useUntil } from './useUntil';
 
 export { default as useSet } from './useSet';
 export { default as useMap } from './useMap';
