@@ -22,7 +22,7 @@ type IntervalHandlerAsArray = Array<number | (() => void) | null> & {
   2: number | null;
 };
 
-type IntervalHandler = IntervalHandlerAsArray & {};
+type IntervalHandler = IntervalHandlerAsArray & IntervalHandlerAsObject;
 
 /**
  * useInterval
@@ -80,7 +80,7 @@ function useInterval(
   (handler as IntervalHandlerAsObject).stop = stop;
   (handler as IntervalHandlerAsObject).intervalId = internalIdRef.current;
 
-  return handler as IntervalHandlerAsArray & IntervalHandlerAsObject;
+  return handler as IntervalHandler;
 }
 
 export default useInterval;

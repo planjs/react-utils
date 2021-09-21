@@ -20,7 +20,7 @@ type BooleanHandlerAsArray = Array<
   3: BooleanHandlerAsObject['setFalse'];
 };
 
-type BooleanHandler = BooleanHandlerAsArray & {};
+type BooleanHandler = BooleanHandlerAsArray & BooleanHandlerAsObject;
 
 /**
  * 默认切换布尔值状态，也可以接收一个参数作为新的值
@@ -39,7 +39,7 @@ const useBoolean = (defaultValue: boolean = false): BooleanHandler => {
   (handler as BooleanHandlerAsObject).setTrue = setTrue;
   (handler as BooleanHandlerAsObject).setFalse = setFalse;
 
-  return handler as BooleanHandlerAsArray & BooleanHandlerAsObject;
+  return handler as BooleanHandler;
 };
 
 export default useBoolean;
