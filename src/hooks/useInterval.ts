@@ -50,6 +50,7 @@ function useInterval(
     if (isRunning) {
       setIsRunning(false);
     }
+    internalIdRef.current && clearPrefSetInterval(internalIdRef.current);
   }
 
   // Remember the latest callback.
