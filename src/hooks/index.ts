@@ -42,6 +42,7 @@ export { default as useSize } from './useSize';
 export { default as useBoolean } from './useBoolean';
 export { default as useToggle } from './useToggle';
 export { default as useCounter } from './useCounter';
+export { default as useCountdown } from './useCountdown';
 export { default as useVisibleObserve } from './useVisibleObserve';
 export { default as useResizeObserver } from './useResizeObserver';
 export { default as useEventListener } from './useEventListener';
