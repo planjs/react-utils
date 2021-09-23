@@ -15,14 +15,15 @@ function useUntil<T extends (...args: any[]) => Promise<any>>(fn: T, options: Ba
   const [err, setErr] = React.useState<Error | undefined>();
 
   const action = React.useRef(
-    until(async (props) => {
+    until(async (...props: Parameters<T>[]) => {
       if (forceStop.current) {
         forceStopCallback.current && forceStopCallback.current();
         return forceStop.current;
       }
       try {
         setErr(undefined);
-        const res = await fn(props);
+        // eslint-disable-next-line prefer-spread
+        const res = await fn.apply(null, props);
         setResult(res);
       } catch (error) {
         setErr(error as Error);
@@ -44,18 +45,17 @@ function useUntil<T extends (...args: any[]) => Promise<any>>(fn: T, options: Ba
   }, []);
 
   const run = React.useCallback(
-    async (props: any, options?: { once?: boolean }) => {
+    async (...props: Parameters<T>) => {
       if (isRunning.current) {
         await cancel();
       }
       isRunning.current = true;
-      action.current(props);
-      options?.once && cancel();
+      return action.current.apply(null, props);
     },
     [cancel, action],
-  );
+  ) as T;
 
-  return { result, run, cancel, err };
+  return { result, run, cancel, isRunning, err };
 }
 
 export default useUntil;
