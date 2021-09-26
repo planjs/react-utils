@@ -1499,13 +1499,26 @@
     stylelint-declaration-block-no-ignored-properties "^1.1.0"
     stylelint-order "^0.8.1"
 
-"@planjs/utils@^1.10.0", "@planjs/utils@^1.11.3":
+"@planjs/utils@^1.10.0":
   version "1.11.3"
   resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.3.tgz#2cef88b4ddbb9e791391a7bd3fb7273a24e90f11"
   integrity sha1-LO+ItN27nnkTkae9P7cnOiTpDxE=
   dependencies:
     "@babel/runtime" "^7.15.4"
     decimal.js "^10.3.1"
+    query-string "^7.0.1"
+
+"@planjs/utils@^1.11.5":
+  version "1.11.5"
+  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.5.tgz#24a21ce0bb12c677b97dae9b92888182fe7e026f"
+  integrity sha1-JKIc4LsSxne5fa6bkoiBgv5+Am8=
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "@types/lodash.debounce" "^4.0.6"
+    "@types/lodash.throttle" "^4.1.6"
+    decimal.js "^10.3.1"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
     query-string "^7.0.1"
 
 "@rollup/plugin-alias@^3.1.2":
@@ -1804,6 +1817,25 @@
   version "7.0.8"
   resolved "https://registry.nlark.com/@types/json-schema/download/@types/json-schema-7.0.8.tgz#edf1bf1dbf4e04413ca8e5b17b3b7d7d54b59818"
   integrity sha1-7fG/Hb9OBEE8qOWxezt9fVS1mBg=
+
+"@types/lodash.debounce@^4.0.6":
+  version "4.0.6"
+  resolved "https://registry.nlark.com/@types/lodash.debounce/download/@types/lodash.debounce-4.0.6.tgz?cache=0&sync_timestamp=1629708369772&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flodash.debounce%2Fdownload%2F%40types%2Flodash.debounce-4.0.6.tgz#c5a2326cd3efc46566c47e4c0aa248dc0ee57d60"
+  integrity sha1-xaIybNPvxGVmxH5MCqJI3A7lfWA=
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.throttle@^4.1.6":
+  version "4.1.6"
+  resolved "https://registry.nlark.com/@types/lodash.throttle/download/@types/lodash.throttle-4.1.6.tgz?cache=0&sync_timestamp=1629708231402&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flodash.throttle%2Fdownload%2F%40types%2Flodash.throttle-4.1.6.tgz#f5ba2c22244ee42ff6c2c49e614401a870c1009c"
+  integrity sha1-9bosIiRO5C/2wsSeYUQBqHDBAJw=
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.174"
+  resolved "https://registry.npmmirror.com/@types/lodash/download/@types/lodash-4.14.174.tgz?cache=0&sync_timestamp=1632533739312&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Flodash%2Fdownload%2F%40types%2Flodash-4.14.174.tgz#b4b06b6eced9850eed6b6a8f1abdd0f5192803c1"
+  integrity sha1-tLBrbs7ZhQ7ta2qPGr3Q9RkoA8E=
 
 "@types/lodash@^4.14.161":
   version "4.14.171"
@@ -6740,6 +6772,11 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.nlark.com/lodash.memoize/download/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.nlark.com/lodash.throttle/download/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
