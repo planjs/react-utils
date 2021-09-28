@@ -13,11 +13,13 @@ export { default as useUpdateEffect } from './useUpdateEffect';
 export { default as useForceUpdate } from './useForceUpdate';
 export { default as useDeepEffect } from './useDeepEffect';
 export { default as useControlledState } from './useControlledState';
+export { default as useDeepCompareMemoize } from './useDeepCompareMemoize';
+export { default as useDeepCompareEffect } from './useDeepCompareEffect';
 
 // bom
-export { default as useInterval } from './useInterval';
 export { default as useTimeout } from './useTimeout';
 export { default as useTimeoutFn } from './useTimeoutFn';
+export { default as useInterval } from './useInterval';
 
 export { default as useSet } from './useSet';
 export { default as useMap } from './useMap';
