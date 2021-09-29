@@ -1918,15 +1918,6 @@
     stylelint-declaration-block-no-ignored-properties "^1.1.0"
     stylelint-order "^0.8.1"
 
-"@planjs/utils@^1.10.0":
-  version "1.11.3"
-  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.3.tgz#2cef88b4ddbb9e791391a7bd3fb7273a24e90f11"
-  integrity sha1-LO+ItN27nnkTkae9P7cnOiTpDxE=
-  dependencies:
-    "@babel/runtime" "^7.15.4"
-    decimal.js "^10.3.1"
-    query-string "^7.0.1"
-
 "@planjs/utils@^1.11.7":
   version "1.11.7"
   resolved "https://registry.npmmirror.com/@planjs/utils/download/@planjs/utils-1.11.7.tgz#4e6eed392e3f255013b0dec1d2c7a36fdd82468d"
@@ -9868,10 +9859,10 @@ stack-utils@^2.0.3:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.10.0.tgz#43ba5fe659959b4325d3782d15a546b06d580805"
-  integrity sha1-Q7pf5lmVm0Ml03gtFaVGsG1YCAU=
+stan-builder@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.npmmirror.com/stan-builder/download/stan-builder-0.11.0.tgz#06274793e56bcbf8ba757b90e9c5ac8ff1cc27a7"
+  integrity sha1-BidHk+Vry/i6dXuQ6cWsj/HMJ6c=
   dependencies:
     "@babel/core" "^7.14.2"
     "@babel/plugin-proposal-decorators" "^7.14.2"
@@ -9920,19 +9911,19 @@ stan-builder@^0.10.0:
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-typescript2 "0.30.0"
     rollup-plugin-visualizer "^4.1.1"
-    stan-utils "^0.6.19"
+    stan-utils "^0.6.21"
     through2 "^4.0.2"
     vinyl-fs "^3.0.3"
     vue-template-compiler "^2.6.12"
   optionalDependencies:
     fsevents "~2.3.2"
 
-stan-utils@^0.6.19:
-  version "0.6.19"
-  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.19.tgz#e3e0b87e2ec29c993ac3cd37d79ba1880e626147"
-  integrity sha1-4+C4fi7CnJk6w80315uhiA5iYUc=
+stan-utils@^0.6.21:
+  version "0.6.21"
+  resolved "https://registry.npmmirror.com/stan-utils/download/stan-utils-0.6.21.tgz#c1904ad2ab5a82418e268d0d4065bf2424f39b91"
+  integrity sha1-wZBK0qtagkGOJo0NQGW/JCTzm5E=
   dependencies:
-    "@planjs/utils" "^1.10.0"
+    "@planjs/utils" "^1.11.7"
     "@types/cross-spawn" "^6.0.2"
     "@types/debug" "^4.1.5"
     "@types/fs-extra" "^9.0.11"
@@ -10949,6 +10940,11 @@ url-parse-lax@^3.0.0:
   integrity sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=
   dependencies:
     prepend-http "^2.0.0"
+
+use-immer@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.nlark.com/use-immer/download/use-immer-0.6.0.tgz#ca6aa5ade93018e2c65cf128d19ada54fc23f70d"
+  integrity sha1-ymqlrekwGOLGXPEo0ZraVPwj9w0=
 
 use@^3.1.0:
   version "3.1.1"

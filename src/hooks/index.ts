@@ -15,6 +15,8 @@ export { default as useDeepEffect } from './useDeepEffect';
 export { default as useControlledState } from './useControlledState';
 export { default as useDeepCompareMemoize } from './useDeepCompareMemoize';
 export { default as useDeepCompareEffect } from './useDeepCompareEffect';
+export { default as useMergeState } from './useMergeState';
+export { useImmer, useImmerReducer } from 'use-immer';
 
 // bom
 export { default as useTimeout } from './useTimeout';
