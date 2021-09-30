@@ -16,37 +16,41 @@ export { default as useControlledState } from './useControlledState';
 export { default as useDeepCompareMemoize } from './useDeepCompareMemoize';
 export { default as useDeepCompareEffect } from './useDeepCompareEffect';
 export { default as useMergeState } from './useMergeState';
+export { default as useBoolean } from './useBoolean';
+export { default as useToggle } from './useToggle';
 
 // bom
 export { default as useTimeout } from './useTimeout';
 export { default as useTimeoutFn } from './useTimeoutFn';
 export { default as useInterval } from './useInterval';
+export { default as useStorageState } from './useStorageState';
+export { default as useLocalStorageState } from './useLocalStorageState';
+export { default as useSessionStorageState } from './useSessionStorageState';
+export { default as useWindowResize } from './useWindowResize';
+export { default as useKeyPress } from './useKeyPress';
+export { default as useVisibleObserve } from './useVisibleObserve';
+export { default as useResizeObserver } from './useResizeObserver';
+export { default as useEventListener } from './useEventListener';
+export { default as useHover } from './useHover';
+export { default as useSize } from './useSize';
 
 export { default as useSet } from './useSet';
 export { default as useMap } from './useMap';
 export { default as useError } from './useError';
 export { default as useCreation } from './useCreation';
 
+// async
 export { default as useAsync } from './useAsync';
 export { default as useAsyncFn } from './useAsyncFn';
 export { default as useAsyncRetry } from './useAsyncRetry';
 export { default as useUntil } from './useUntil';
 
-export { default as useStorageState } from './useStorageState';
-export { default as useLocalStorageState } from './useLocalStorageState';
-export { default as useSessionStorageState } from './useSessionStorageState';
-export { default as useWindowResize } from './useWindowResize';
 export { default as useDebounce } from './useDebounce';
+export { default as useDebounceEffect } from './useDebounceEffect';
 export { default as useDebounceFn } from './useDebounceFn';
 export { default as useThrottle } from './useThrottle';
+export { default as useThrottleEffect } from './useThrottleEffect';
 export { default as useThrottleFn } from './useThrottleFn';
-export { default as useKeyPress } from './useKeyPress';
-export { default as useSize } from './useSize';
-export { default as useBoolean } from './useBoolean';
-export { default as useToggle } from './useToggle';
 export { default as useCounter } from './useCounter';
 export { default as useCountdown } from './useCountdown';
-export { default as useVisibleObserve } from './useVisibleObserve';
-export { default as useResizeObserver } from './useResizeObserver';
-export { default as useEventListener } from './useEventListener';
-export { default as useHover } from './useHover';
+export { default as usePrevious } from './usePrevious';
