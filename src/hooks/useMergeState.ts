@@ -16,7 +16,9 @@ type SetMergeStateOptions = {
  * 仅支持合并 object array Map Set
  * @param initialState
  */
-function useMergeState<S>(initialState: S | (() => S)) {
+function useMergeState<S>(
+  initialState: S | (() => S),
+): [S, (value: SetStateAction<S>, options?: SetMergeStateOptions) => void] {
   const [state, setState] = useState<S>(initialState);
 
   const setMergeState = useCallback((value: SetStateAction<S>, options?: SetMergeStateOptions) => {

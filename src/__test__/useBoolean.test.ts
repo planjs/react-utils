@@ -4,7 +4,7 @@ import { useBoolean } from '../index';
 const setUp = (defaultValue?: boolean) => renderHook(() => useBoolean(defaultValue));
 
 describe('useBoolean', () => {
-  it('test methods', async () => {
+  it('test methods', () => {
     const { result } = setUp();
     expect(result.current.state).toBeFalsy();
     act(() => {
