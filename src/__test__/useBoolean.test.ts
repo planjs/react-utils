@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import { useBoolean } from '../src';
+import { useBoolean } from '../index';
 
 const setUp = (defaultValue?: boolean) => renderHook(() => useBoolean(defaultValue));
 

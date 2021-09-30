@@ -6,6 +6,8 @@ name: publish
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**/*.test.*'
 
 jobs:
   build:
