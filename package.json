@@ -1,8 +1,11 @@
 {
   "name": "@planjs/react-utils",
   "version": "0.0.15",
-  "description": "React tool collection",
-  "keywords": [],
+  "description": "React Utils Library",
+  "keywords": [
+    "react",
+    "react-hook"
+  ],
   "homepage": "https://github.com/planjs/react-utils#readme",
   "bugs": {
     "url": "https://github.com/planjs/react-utils/issues"
