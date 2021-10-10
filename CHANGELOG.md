@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.17 (2021-10-10)
+
+
+### Bug Fixes
+
+* useSafeState typing ([7d36cc0](https://github.com/planjs/react-utils/commit/7d36cc08b01604843d03ca4c3c313b7c043da64f))
+
 ### 0.0.16 (2021-09-30)
 
 ### 0.0.15 (2021-09-30)
