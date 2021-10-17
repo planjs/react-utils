@@ -29,6 +29,5 @@
     "isolatedModules": false,
     "declarationDir": "typings",
     "jsx": "preserve"
-  },
-  "include": ["./src/"]
+  }
 }
