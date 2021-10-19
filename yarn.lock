@@ -9859,10 +9859,10 @@ stack-utils@^2.0.3:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.npmmirror.com/stan-builder/download/stan-builder-0.11.0.tgz#06274793e56bcbf8ba757b90e9c5ac8ff1cc27a7"
-  integrity sha1-BidHk+Vry/i6dXuQ6cWsj/HMJ6c=
+stan-builder@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.npmmirror.com/stan-builder/download/stan-builder-0.11.1.tgz#03f017155a20be90fb41532c1d53a132889d6e26"
+  integrity sha1-A/AXFVogvpD7QVMsHVOhMoidbiY=
   dependencies:
     "@babel/core" "^7.14.2"
     "@babel/plugin-proposal-decorators" "^7.14.2"
@@ -10940,11 +10940,6 @@ url-parse-lax@^3.0.0:
   integrity sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=
   dependencies:
     prepend-http "^2.0.0"
-
-use-immer@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.nlark.com/use-immer/download/use-immer-0.6.0.tgz#ca6aa5ade93018e2c65cf128d19ada54fc23f70d"
-  integrity sha1-ymqlrekwGOLGXPEo0ZraVPwj9w0=
 
 use@^3.1.0:
   version "3.1.1"

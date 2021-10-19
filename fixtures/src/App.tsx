@@ -1,15 +1,15 @@
-import React from "react";
-import { observer } from "mobx-react";
-import counterStore from "./counterStore";
+import React from 'react';
+
+import MakeGlobalApiDemo from './demo/makeGlobalApi';
+import CacheComponentDOM from './demo/CacheComponentDOM';
 
 const App: React.FC = () => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>count: {counterStore.count}</h1>
-      <button onClick={counterStore.add}>+</button>
-      <button onClick={counterStore.sub}>-</button>
+    <div style={{ textAlign: 'center' }}>
+      <MakeGlobalApiDemo />
+      <CacheComponentDOM />
     </div>
   );
 };
 
-export default observer(App);
+export default App;

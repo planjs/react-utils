@@ -1,15 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "mobx-react";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import counterStore from "./counterStore";
-import App from "./App";
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider {...{ counterStore }}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>,
-  document.getElementById("root")
+  document.getElementById('root'),
 );
