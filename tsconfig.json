@@ -4,6 +4,7 @@
     "target": "ES2018",
     "module": "ESNext",
     "strict": true,
+    "jsx": "react",
     "declaration": true,
     "preserveConstEnums": true,
     "esModuleInterop": true,
@@ -27,8 +28,7 @@
     "rootDir": "src",
     "outDir": "lib",
     "isolatedModules": false,
-    "declarationDir": "typings",
-    "jsx": "preserve"
+    "declarationDir": "typings"
   },
   "include": ["src/**/*"]
 }
