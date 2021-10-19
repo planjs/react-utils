@@ -1,5 +1,5 @@
 export { default as makeGlobalApi } from './make-global-api';
 export type { MakeGlobalApiOptions, MakeGlobalApiReturnType } from './make-global-api';
 
-export { default as CacheComponent } from './cache-component';
-export type { CacheComponentProps } from './cache-component';
+export { default as CacheComponentDOM } from './cache-component-dom';
+export type { CacheComponentDOMProps } from './cache-component-dom';

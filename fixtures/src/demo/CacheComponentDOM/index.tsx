@@ -1,7 +1,7 @@
 import React from 'react';
 import { incrementId } from '@planjs/utils';
 
-import { CacheComponent, useBoolean } from '../../../../';
+import { CacheComponentDOM, useBoolean, useCounter, useInterval } from '../../../../';
 
 const id = incrementId();
 
@@ -10,12 +10,16 @@ function Counter() {
   return <div>{key}</div>;
 }
 
-const CacheComponentDemo: React.FC = () => {
+const CacheComponentDOMDemo: React.FC = () => {
   const [visible, setVisible] = useBoolean(true);
+
+  const [count, { inc }] = useCounter(0);
+
+  useInterval(() => inc(1), 1000, true);
 
   return (
     <div>
-      <h1>CacheComponent</h1>
+      <h1>CacheComponentDOM</h1>
       <button
         onClick={() => {
           setVisible(!visible);
@@ -23,8 +27,9 @@ const CacheComponentDemo: React.FC = () => {
       >
         {!visible ? '显示' : '移除'}
       </button>
+      <div>update {count}</div>
       {visible ? (
-        <CacheComponent
+        <CacheComponentDOM
           getContainer={() => {
             const div = document.getElementById('counter');
             if (div) {
@@ -36,12 +41,18 @@ const CacheComponentDemo: React.FC = () => {
             document.body.appendChild(el);
             return el;
           }}
+          shouldUpdate={() => false}
         >
           <Counter />
-        </CacheComponent>
+          <iframe
+            src="https://www.aquanliang.com/admin"
+            title="web"
+            style={{ width: '100vw', height: 400 }}
+          />
+        </CacheComponentDOM>
       ) : null}
     </div>
   );
 };
 
-export default CacheComponentDemo;
+export default CacheComponentDOMDemo;
