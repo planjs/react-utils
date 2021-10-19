@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import ReactDOM from 'react-dom';
 
 export type CacheComponentDOMProps = React.PropsWithChildren<{
@@ -12,6 +12,15 @@ export type CacheComponentDOMProps = React.PropsWithChildren<{
    * @default () => true
    */
   shouldUpdate?: () => boolean;
+  /**
+   * 外层包裹html tag
+   * @default div
+   */
+  containerHTMLTag?: keyof React.ReactHTML;
+  /**
+   * 包裹元素props
+   */
+  containerHTMLProps?: HTMLAttributes<any>;
 }>;
 
 /**
@@ -20,7 +29,13 @@ export type CacheComponentDOMProps = React.PropsWithChildren<{
  * @constructor
  */
 function CacheComponentDOM(props: CacheComponentDOMProps) {
-  const { getContainer = () => document.body, shouldUpdate = () => true, children } = props;
+  const {
+    getContainer = () => document.body,
+    shouldUpdate = () => true,
+    containerHTMLTag = 'div',
+    containerHTMLProps,
+    children,
+  } = props;
   const elRef = React.useRef<HTMLDivElement>(null);
 
   const [container] = React.useState(getContainer);
@@ -42,7 +57,10 @@ function CacheComponentDOM(props: CacheComponentDOMProps) {
     hasUpdate ? [children] : [],
   );
 
-  return <div ref={elRef} />;
+  return React.createElement(containerHTMLTag, {
+    ...containerHTMLProps,
+    ref: elRef,
+  });
 }
 
 function moveChildNode(source: Element, target: Element, deepClone = false) {
