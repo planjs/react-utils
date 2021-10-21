@@ -8,16 +8,12 @@ export { default as useMount } from './useMount';
 export { default as useUnmount } from './useUnmount';
 export { default as useSafeState } from './useSafeState';
 export { default as useMountedState } from './useMountedState';
-export { default as usePersistFn } from './usePersistFn';
 export { default as useUpdateEffect } from './useUpdateEffect';
 export { default as useForceUpdate } from './useForceUpdate';
 export { default as useDeepEffect } from './useDeepEffect';
 export { default as useControlledState } from './useControlledState';
 export { default as useDeepCompareMemoize } from './useDeepCompareMemoize';
 export { default as useDeepCompareEffect } from './useDeepCompareEffect';
-export { default as useMergeState } from './useMergeState';
-export { default as useBoolean } from './useBoolean';
-export { default as useToggle } from './useToggle';
 
 // bom
 export { default as useTimeout } from './useTimeout';
@@ -37,14 +33,21 @@ export { default as useSize } from './useSize';
 export { default as useSet } from './useSet';
 export { default as useMap } from './useMap';
 export { default as useError } from './useError';
+export { default as useMergeState } from './useMergeState';
+export { default as useBoolean } from './useBoolean';
+export { default as useToggle } from './useToggle';
+export { default as usePrevious } from './usePrevious';
 export { default as useCreation } from './useCreation';
+export { default as usePersistFn } from './usePersistFn';
 
 // async
 export { default as useAsync } from './useAsync';
 export { default as useAsyncFn } from './useAsyncFn';
 export { default as useAsyncRetry } from './useAsyncRetry';
 export { default as useUntil } from './useUntil';
+export { default as usePromise } from './usePromise';
 
+// event
 export { default as useDebounce } from './useDebounce';
 export { default as useDebounceEffect } from './useDebounceEffect';
 export { default as useDebounceFn } from './useDebounceFn';
@@ -53,4 +56,3 @@ export { default as useThrottleEffect } from './useThrottleEffect';
 export { default as useThrottleFn } from './useThrottleFn';
 export { default as useCounter } from './useCounter';
 export { default as useCountdown } from './useCountdown';
-export { default as usePrevious } from './usePrevious';

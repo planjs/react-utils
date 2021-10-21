@@ -2,6 +2,11 @@ import { useRef } from 'react';
 
 export type compareFunction<T> = (prev: T | undefined, next: T) => boolean;
 
+/**
+ * 使用上一次的状态
+ * @param state
+ * @param compare
+ */
 function usePrevious<T>(state: T, compare?: compareFunction<T>): T | undefined {
   const prevRef = useRef<T>();
   const curRef = useRef<T>();

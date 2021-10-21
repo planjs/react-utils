@@ -3,3 +3,6 @@ export type { MakeGlobalApiOptions, MakeGlobalApiReturnType } from './make-globa
 
 export { default as CacheComponentDOM } from './cache-component-dom';
 export type { CacheComponentDOMProps } from './cache-component-dom';
+
+export { default as LoadScript } from './load-script';
+export { LoadScriptProps } from './load-script';
