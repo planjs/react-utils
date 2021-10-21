@@ -70,19 +70,19 @@ function makeGlobalApi<P = any>(opts: MakeGlobalApiOptions<P>): MakeGlobalApiRet
   ReactDOM.render(<Wrapper ref={wrapperRef} />, div);
 
   return {
-    render(props?: any) {
+    render(props?: P) {
       const index = wrapperRef.current?.add(children, props)!;
       return {
         index,
         unmount() {
           return wrapperRef.current?.del(index);
         },
-        update(props: any) {
+        update(props: P) {
           wrapperRef.current?.update(index, props);
         },
       };
     },
-    update(key, props?: any) {
+    update(key, props?: P) {
       wrapperRef.current?.update(key, props);
     },
     unmountAll() {

@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 export type CacheComponentDOMProps = React.PropsWithChildren<{
@@ -20,7 +20,7 @@ export type CacheComponentDOMProps = React.PropsWithChildren<{
   /**
    * 包裹元素props
    */
-  containerHTMLProps?: HTMLAttributes<any>;
+  containerHTMLProps?: React.HTMLAttributes<any>;
 }>;
 
 /**
@@ -41,12 +41,13 @@ function CacheComponentDOM(props: CacheComponentDOMProps) {
   const [container] = React.useState(getContainer);
   const hasUpdate = shouldUpdate();
 
+  const divRef = React.useRef(document.createElement('div'));
+
   React.useLayoutEffect(
     () => {
       moveChildNode(container, elRef.current!);
-      const div = document.createElement('div');
-      ReactDOM.render(children as React.ReactElement, div, () => {
-        elRef.current!.innerHTML = div.innerHTML;
+      ReactDOM.render(children as React.ReactElement, divRef.current, () => {
+        elRef.current!.innerHTML = divRef.current.innerHTML;
       });
       return () => {
         container.innerHTML = '';
