@@ -6,3 +6,5 @@ export type { CacheComponentDOMProps } from './cache-component-dom';
 
 export { default as LoadScript } from './load-script';
 export { LoadScriptProps } from './load-script';
+
+export { default as Portal } from './portal';

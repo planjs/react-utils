@@ -30,6 +30,7 @@ export { default as useEventListener } from './useEventListener';
 export { default as useHover } from './useHover';
 export { default as useSize } from './useSize';
 
+// state
 export { default as useSet } from './useSet';
 export { default as useMap } from './useMap';
 export { default as useError } from './useError';
