@@ -1,17 +1,19 @@
 import React from 'react';
 import { isFunction } from '@planjs/utils';
 
-export type IfProps = React.PropsWithChildren<{
+export type IfProps = {
   condition?: (() => boolean) | boolean;
-  render?: () => React.ReactNode;
-}>;
+  render?: () => React.ReactNode | undefined;
+};
 
-const If = (props: IfProps) => {
-  let condition = props.condition;
+const If: React.FC<IfProps> = (props) => {
+  let condition = !!props.condition;
   if (props.condition && isFunction(props.condition)) {
     condition = props.condition();
   }
-  return condition ? (props.render ? props.render() : props.children) : null;
+  return (
+    condition ? (props.render ? props.render() : props.children) : null
+  ) as React.ReactElement;
 };
 
 export default If;
