@@ -9,9 +9,4 @@ module.exports = {
   coverageDirectory: './coverage',
   testTimeout: 30000,
   testEnvironment: 'jsdom',
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.test.json',
-    },
-  },
 };

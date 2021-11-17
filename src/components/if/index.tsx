@@ -3,7 +3,7 @@ import { isFunction } from '@planjs/utils';
 
 export type IfProps = {
   condition?: (() => boolean) | boolean;
-  render?: () => React.ReactNode | undefined;
+  render?: () => React.ReactNode | undefined | null;
 };
 
 const If: React.FC<IfProps> = (props) => {
@@ -11,9 +11,9 @@ const If: React.FC<IfProps> = (props) => {
   if (props.condition && isFunction(props.condition)) {
     condition = props.condition();
   }
-  return (
-    condition ? (props.render ? props.render() : props.children) : null
-  ) as React.ReactElement;
+  return condition
+    ? ((props.render ? props.render() : props.children) as React.ReactElement)
+    : null;
 };
 
 export default If;
