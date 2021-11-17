@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.24 (2021-11-17)
+
+
+### Features
+
+* add utils export and add some utils ([f3e058d](https://github.com/planjs/react-utils/commit/f3e058d7cfd6fc3fa8d157e1f7765c91fd2d74b0))
+
 ### 0.0.23 (2021-11-16)
 
 ### 0.0.22 (2021-11-16)
