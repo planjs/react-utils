@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.25 (2021-11-27)
+
+
+### Features
+
+* useCountdown params adjust ([1958288](https://github.com/planjs/react-utils/commit/19582889741068fe90914c5f4e4ef0afb3693743))
+
 ### 0.0.24 (2021-11-17)
 
 
