@@ -40,6 +40,8 @@ export { default as useToggle } from './useToggle';
 export { default as usePrevious } from './usePrevious';
 export { default as useCreation } from './useCreation';
 export { default as usePersistFn } from './usePersistFn';
+export { default as usePagination } from './usePagination';
+export { default as useList } from './useList';
 
 // async
 export { default as useAsync } from './useAsync';
