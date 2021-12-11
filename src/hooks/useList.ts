@@ -101,10 +101,12 @@ const useList = <T>(initialList: T[] = []) => {
     });
   }, []);
 
-  const push = useCallback((item: T) => {
+  const push = useCallback((...items: T[]) => {
     setList((l) => {
-      setKey(l.length);
-      return l.concat([item]);
+      items.forEach((_, key) => {
+        setKey(l.length + key);
+      });
+      return l.concat(items);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -120,10 +122,12 @@ const useList = <T>(initialList: T[] = []) => {
     setList((l) => l.slice(0, l.length - 1));
   }, []);
 
-  const unshift = useCallback((item: T) => {
+  const unshift = useCallback((...items: T[]) => {
     setList((l) => {
-      setKey(0);
-      return [item].concat(l);
+      items.forEach((_, key) => {
+        setKey(key);
+      });
+      return items.concat(l);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
