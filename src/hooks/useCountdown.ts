@@ -8,6 +8,10 @@ type CountdownOptions = {
   interval?: number;
   onDown?: Function;
   onEnd?: Function;
+  /**
+   * execute immediately
+   */
+  startImmediate?: boolean;
 };
 
 /**
@@ -15,16 +19,19 @@ type CountdownOptions = {
  * @param endTime Time to countdown
  * @param options  Countdown options
  */
-function useCountdown(endTime: DateInput, options: CountdownOptions = {}): number {
+function useCountdown(
+  endTime: DateInput,
+  options: CountdownOptions = {},
+): [number, ReturnType<typeof useInterval>] {
   const _endTime = toDate(endTime);
-  const { interval = 1_000, onDown, onEnd } = options;
+  const { interval = 1_000, onDown, onEnd, startImmediate = true } = options;
   const [time, setTime] = useSafeState<Date>(() => new Date());
   const restTime = _endTime.getTime() - time.getTime();
   const count = restTime > 0 ? Math.ceil(restTime / interval) : 0;
 
-  useInterval(onTick, count ? interval : null, true);
+  const useIntervalRes = useInterval(onTick, count ? interval : null, startImmediate);
 
-  return count;
+  return [count, useIntervalRes];
 
   function onTick() {
     const newTime = new Date();
