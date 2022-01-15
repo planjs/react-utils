@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.29 (2022-01-15)
+
+
+### Bug Fixes
+
+* **switch:** condition 0 error ([2d796b9](https://github.com/planjs/react-utils/commit/2d796b9262ccca871c8c15cea31e7bb23c5c317a))
+
 ### 0.0.28 (2022-01-14)
 
 
