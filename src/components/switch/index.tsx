@@ -24,7 +24,9 @@ const Switch = (props: SwitchProps) => {
           condition: true,
         });
       } else if (_props.condition === props.value) {
-        c = children;
+        c = React.cloneElement(children, {
+          condition: true,
+        });
         return;
       }
     }
