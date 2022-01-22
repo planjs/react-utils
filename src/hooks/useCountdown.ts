@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react';
 import { toDate } from '@planjs/utils';
 import type { DateInput } from '@planjs/utils/typings/date/to-date';
 
@@ -16,22 +17,37 @@ type CountdownOptions = {
 
 /**
  * useCountdown
- * @param endTime Time to countdown
+ * @param endTime Time to countdown, if no endTime is passed in, startImmediate defaults to false
  * @param options  Countdown options
  */
 function useCountdown(
-  endTime: DateInput,
+  endTime?: DateInput,
   options: CountdownOptions = {},
-): [number, ReturnType<typeof useInterval>] {
-  const _endTime = toDate(endTime);
-  const { interval = 1_000, onDown, onEnd, startImmediate = true } = options;
+): [number, (endTime?: DateInput) => void, ReturnType<typeof useInterval>] {
+  const endTimeRef = useRef(toDate(endTime || new Date()));
+  const _endTime = endTimeRef.current!;
+  const { interval = 1_000, onDown, onEnd, startImmediate = endTime !== undefined } = options;
   const [time, setTime] = useSafeState<Date>(() => new Date());
   const restTime = _endTime.getTime() - time.getTime();
   const count = restTime > 0 ? Math.ceil(restTime / interval) : 0;
 
+  useEffect(() => {
+    if (endTime !== undefined) {
+      endTimeRef.current = toDate(endTime);
+    }
+  }, [endTime]);
+
   const useIntervalRes = useInterval(onTick, count ? interval : null, startImmediate);
 
-  return [count, useIntervalRes];
+  return [count, handleRestart, useIntervalRes];
+
+  function handleRestart(endTime?: DateInput) {
+    if (endTime) {
+      endTimeRef.current = toDate(endTime);
+    }
+    setTime(new Date());
+    useIntervalRes.start();
+  }
 
   function onTick() {
     const newTime = new Date();
