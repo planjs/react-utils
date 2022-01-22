@@ -42,9 +42,7 @@ function useCountdown(
   return [count, handleRestart, useIntervalRes];
 
   function handleRestart(endTime?: DateInput) {
-    if (endTime) {
-      endTimeRef.current = toDate(endTime);
-    }
+    endTimeRef.current = toDate(endTime || new Date());
     setTime(new Date());
     useIntervalRes.start();
   }
