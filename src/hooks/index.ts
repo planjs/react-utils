@@ -42,6 +42,7 @@ export { default as useCreation } from './useCreation';
 export { default as usePersistFn } from './usePersistFn';
 export { default as usePagination } from './usePagination';
 export { default as useList } from './useList';
+export { default as useCallbackState } from './useCallbackState';
 
 // async
 export { default as useAsync } from './useAsync';

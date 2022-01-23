@@ -19,6 +19,7 @@ type CountdownOptions = {
  * useCountdown
  * @param endTime Time to countdown, if no endTime is passed in, startImmediate defaults to false
  * @param options  Countdown options
+ * @return {[counter,handleRestart,useInterval]}
  */
 function useCountdown(
   endTime?: DateInput,
