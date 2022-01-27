@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: yarn
-      - run: yarn test
+      - run: pnpm
+      - run: pnpm test
 
   publish-npm:
     needs: build
@@ -32,7 +32,7 @@ jobs:
       - run: |
           git config --local user.email "fupenglxy@gmail.com"
           git config --local user.name "fupengl"
-      - run: yarn
+      - run: pnpm i
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
@@ -51,8 +51,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: yarn
-      - run: yarn prepare
+      - run: pnpm i
       - run: npm publish --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
