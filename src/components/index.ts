@@ -15,3 +15,6 @@ export { default as Switch } from './switch';
 
 export { default as FormatterWrap } from './formatter-wrap';
 export type { FormatterWrapProps } from './formatter-wrap';
+
+export { default as AsyncWrap } from './async-wrap';
+export type { AsyncWrapProps } from './async-wrap';
