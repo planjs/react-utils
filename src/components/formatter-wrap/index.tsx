@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type FormatterWarpProps<I = any, O = any> = React.PropsWithChildren<{
+export type FormatterWrapProps<I = any, O = any> = React.PropsWithChildren<{
   /**
    * 以下两个属性不要传入
    */
@@ -24,6 +24,12 @@ export type FormatterWarpProps<I = any, O = any> = React.PropsWithChildren<{
    * @param value
    */
   outputFormatter?: (...args: any[]) => O;
+
+  /**
+   * 获取事件值
+   * @param args
+   */
+  getValueFromEvent?: (...args: any[]) => any;
 }>;
 
 /**
@@ -31,7 +37,7 @@ export type FormatterWarpProps<I = any, O = any> = React.PropsWithChildren<{
  * @param props
  * @constructor
  */
-function FormatterWarp<I, O>(props: FormatterWarpProps<I, O>) {
+function FormatterWrap<I, O>(props: FormatterWrapProps<I, O>) {
   const {
     children,
     inputFormatter,
@@ -39,6 +45,7 @@ function FormatterWarp<I, O>(props: FormatterWarpProps<I, O>) {
     onChange,
     valuePropName = 'value',
     value,
+    getValueFromEvent,
     ...p
   } = props;
 
@@ -50,19 +57,28 @@ function FormatterWarp<I, O>(props: FormatterWarpProps<I, O>) {
     [valuePropName]: inputFormatter ? inputFormatter(val) : val,
     onChange(...args: any[]) {
       if (onChange) {
-        outputFormatter ? onChange(outputFormatter(...args)) : onChange(...args);
+        let newValue: any;
+        if (getValueFromEvent) {
+          newValue = getValueFromEvent(...args);
+        } else {
+          newValue = defaultGetValueFromEvent(valuePropName, ...args);
+        }
+        outputFormatter
+          ? onChange(outputFormatter(newValue, ...args?.slice(1)))
+          : onChange(newValue, ...args?.slice(1));
       }
     },
   });
 }
 
-FormatterWarp.toArrayProps = {
-  inputFormatter(val: any[]) {
-    return val?.[0];
-  },
-  outputFormatter(val: any) {
-    return [val].filter(Boolean);
-  },
-};
+function defaultGetValueFromEvent(valuePropName: string, ...args: any[]) {
+  const event = args?.[0];
+  if (event && event.target && typeof event.target === 'object' && valuePropName in event.target) {
+    // @ts-ignore
+    return (event.target as HTMLInputElement)[valuePropName];
+  }
 
-export default FormatterWarp;
+  return event;
+}
+
+export default FormatterWrap;

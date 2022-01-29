@@ -13,5 +13,5 @@ export { default as Portal } from './portal';
 export { default as If } from './if';
 export { default as Switch } from './switch';
 
-export { default as FormatterWarp } from './formatter-warp';
-export type { FormatterWarpProps } from './formatter-warp';
+export { default as FormatterWrap } from './formatter-wrap';
+export type { FormatterWrapProps } from './formatter-wrap';
