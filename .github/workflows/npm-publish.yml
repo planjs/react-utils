@@ -6,8 +6,8 @@ name: publish
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - '**/*.test.*'
+    paths:
+      - 'src/**'
 
 jobs:
   build:
@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 12
       - run: pnpm
@@ -26,6 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
@@ -48,6 +50,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2.0.1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
