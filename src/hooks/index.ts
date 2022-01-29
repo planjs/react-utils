@@ -43,6 +43,7 @@ export { default as usePersistFn } from './usePersistFn';
 export { default as usePagination } from './usePagination';
 export { default as useList } from './useList';
 export { default as useCallbackState } from './useCallbackState';
+export { default as useReactive } from './useReactive';
 
 // async
 export { default as useAsync } from './useAsync';
