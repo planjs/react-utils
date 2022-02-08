@@ -3,7 +3,7 @@ import React from 'react';
 import { FormatterWrap } from '../../../../'
 
 function FormatterWrapDemo() {
-  const [value, onChange] = React.useState()
+  const [value, onChange] = React.useState<string[]>()
 
   return <FormatterWrap<string, string[]>
     value={value}

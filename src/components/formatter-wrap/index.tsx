@@ -4,8 +4,8 @@ export type FormatterWrapProps<I = any, O = any> = React.PropsWithChildren<{
   /**
    * 以下两个属性不要传入
    */
-  value?: I;
-  onChange?: (...args: any[]) => void;
+  value?: O;
+  onChange?: (value: O, ...args: any[]) => void;
 
   /**
    * 自定义绑定值的propName
