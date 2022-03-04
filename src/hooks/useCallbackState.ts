@@ -29,14 +29,12 @@ function useCallbackState<S>(initialState?: S | (() => S)) {
 
   const getState = useCallback(() => stateRef.current, []);
 
-  return [
-    state,
-    function (value: S, cb?: (value: S) => void) {
-      setState(value);
-      cbRef.current = cb;
-    },
-    getState,
-  ];
+  const _setState = useCallback((value: S, cb?: (value: S) => void) => {
+    setState(value);
+    cbRef.current = cb;
+  }, []);
+
+  return [state, _setState, getState];
 }
 
 export default useCallbackState;
