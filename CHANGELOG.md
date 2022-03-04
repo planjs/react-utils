@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.35 (2022-03-04)
+
+
+### Bug Fixes
+
+* **usecallbackstate:** set usecallback ([dd9cb51](https://github.com/planjs/react-utils/commit/dd9cb5192e040cf216dc6b41b7d980b7c1aceaed))
+
 ### 0.0.34 (2022-02-08)
 
 ### 0.0.33 (2022-01-29)
