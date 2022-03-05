@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.36 (2022-03-05)
+
+
+### Bug Fixes
+
+* **async-wrap:** typings ([810fc53](https://github.com/planjs/react-utils/commit/810fc53d6e8acc168b643485391f5d05e7d530e7))
+
 ### 0.0.35 (2022-03-04)
 
 
