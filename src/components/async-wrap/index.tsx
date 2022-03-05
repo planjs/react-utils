@@ -1,26 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import type { ReactNode } from 'react';
-import { isFunction } from '@planjs/utils';
+import React, { useEffect } from 'react';
+import type { ReactNode, FC } from 'react';
+import { isFunction, prefSetTimeout } from '@planjs/utils';
+
+import useSafeState from '../../hooks/useSafeState';
 
 export type AsyncWrapProps = {
   delay?: number;
   loaded?: (() => Promise<unknown>) | Promise<unknown>;
-  fallback: NonNullable<ReactNode> | null;
+  fallback?: ReactNode;
 };
 
-const AsyncWrap: React.FC<AsyncWrapProps> = (props) => {
-  const [loading, setLoading] = useState(true);
+const AsyncWrap: FC<AsyncWrapProps> = (props) => {
+  const [loading, setLoading] = useSafeState(true);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    if (props.loaded!) {
-      Promise.resolve(isFunction(props.loaded) ? props.loaded() : props.loaded).finally(() => {
-        timer = setTimeout(() => setLoading(false), props.delay || 0);
-      });
-    }
+    const timer = prefSetTimeout(() => {
+      if (props.loaded!) {
+        Promise.resolve(isFunction(props.loaded) ? props.loaded() : props.loaded).finally(() => {
+          setLoading(false);
+        });
+      } else {
+        setLoading(false);
+      }
+    }, props.delay || 0);
+
     return () => {
       timer && clearTimeout(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props]);
 
   return <>{loading ? props.fallback : props.children!}</>;

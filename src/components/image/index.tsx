@@ -7,6 +7,7 @@ type ImageProps = React.ImgHTMLAttributes<HTMLImageElement> & {
 
 const Image: React.FC<ImageProps> = ({ url, fallbackUrl, ...props }) => (
   <img
+    alt=""
     {...props}
     src={url}
     onError={(event) => {
