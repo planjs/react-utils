@@ -90,7 +90,7 @@
     "lint-staged": "^10.2.13",
     "react": "16.14.0",
     "react-dom": "16.14.0",
-    "stan-builder": "^0.14.1",
+    "stan-builder": "latest",
     "standard-version": "^9.0.0",
     "ts-jest": "^27.0.3",
     "typescript": "4.1.5"

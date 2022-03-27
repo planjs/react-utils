@@ -3,12 +3,13 @@ import React from 'react';
 import { FormatterWrap } from '../../../../'
 
 function FormatterWrapDemo() {
-  const [value, onChange] = React.useState<string[]>()
+  const [value, onChange] = React.useState<string[]>([])
+
+  console.log(value);
 
   return <FormatterWrap<string, string[]>
     value={value}
     onChange={e => {
-      console.log(e)
       onChange(e)
     }}
     inputFormatter={val => {

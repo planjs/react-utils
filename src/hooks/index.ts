@@ -44,6 +44,7 @@ export { default as usePagination } from './usePagination';
 export { default as useList } from './useList';
 export { default as useCallbackState } from './useCallbackState';
 export { default as useReactive } from './useReactive';
+export { default as useRafState } from './useRafState';
 
 // async
 export { default as useAsync } from './useAsync';
