@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.37 (2022-03-27)
+
+
+### Features
+
+* add hooks ([4e2bced](https://github.com/planjs/react-utils/commit/4e2bced2191874c42d4466c8c6c0d04026474043))
+
 ### 0.0.36 (2022-03-05)
 
 
