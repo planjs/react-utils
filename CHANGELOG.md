@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.38 (2022-04-04)
+
+
+### Features
+
+* add useUniqueId ([ebbde7a](https://github.com/planjs/react-utils/commit/ebbde7afcdf11806f7c97eaf21ba76d88155edd4))
+
 ### 0.0.37 (2022-03-27)
 
 
