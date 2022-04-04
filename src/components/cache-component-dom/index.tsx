@@ -51,6 +51,7 @@ function CacheComponentDOM(props: CacheComponentDOMProps) {
       });
       return () => {
         container.innerHTML = '';
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         moveChildNode(elRef.current!, container);
       };
     },

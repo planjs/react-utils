@@ -45,6 +45,7 @@ export { default as useList } from './useList';
 export { default as useCallbackState } from './useCallbackState';
 export { default as useReactive } from './useReactive';
 export { default as useRafState } from './useRafState';
+export { default as useUniqueId } from './useUniqueId';
 
 // async
 export { default as useAsync } from './useAsync';

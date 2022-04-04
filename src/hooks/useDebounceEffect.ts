@@ -13,6 +13,7 @@ function useDebounceEffect(effect: EffectCallback, wait: number, deps?: Dependen
 
   useEffect(() => {
     return run();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   useUnmount(cancel);
