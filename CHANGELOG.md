@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.39 (2022-04-19)
+
+
+### Bug Fixes
+
+* protal cleanup fn ([5b72504](https://github.com/planjs/react-utils/commit/5b72504fb301c41248066df9b6e43c18a6a4c82a))
+
 ### 0.0.38 (2022-04-04)
 
 
