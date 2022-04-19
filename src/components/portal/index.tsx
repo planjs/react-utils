@@ -13,14 +13,12 @@ const Portal = React.forwardRef<PortalRef, PortalProps>((props, ref) => {
   const { didUpdate, getContainer, children } = props;
 
   const containerRef = React.useRef<Element>();
-  const parentRef = React.useRef<Node>();
 
   React.useImperativeHandle(ref, () => ({}));
 
   const initRef = React.useRef(false);
   if (!initRef.current) {
     containerRef.current = getContainer();
-    parentRef.current = containerRef.current.parentNode!;
     initRef.current = true;
   }
 
@@ -29,9 +27,6 @@ const Portal = React.forwardRef<PortalRef, PortalProps>((props, ref) => {
   });
 
   React.useEffect(() => {
-    if (containerRef.current!.parentNode === null && parentRef.current !== null) {
-      parentRef.current!.appendChild!(containerRef.current!);
-    }
     return () => {
       containerRef.current?.parentNode?.removeChild(containerRef.current);
     };
