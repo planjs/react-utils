@@ -1,5 +1,5 @@
 import React from 'react';
-import RPT from 'prop-types';
+import { object, func, string } from 'prop-types';
 
 export interface LoadScriptProps {
   attributes: Partial<HTMLScriptElement>;
@@ -11,11 +11,11 @@ export interface LoadScriptProps {
 
 class LoadScript extends React.Component<LoadScriptProps> {
   static propTypes = {
-    attributes: RPT.object,
-    onCreate: RPT.func,
-    onError: RPT.func.isRequired,
-    onLoad: RPT.func.isRequired,
-    url: RPT.string.isRequired,
+    attributes: object,
+    onCreate: func,
+    onError: func.isRequired,
+    onLoad: func.isRequired,
+    url: string.isRequired,
   };
 
   static defaultProps: Partial<LoadScriptProps> = {
