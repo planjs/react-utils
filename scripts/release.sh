@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Release branch
-master="master"
+master="main"
 prefix="stable-"
 
 git pull origin $master
